@@ -1,0 +1,598 @@
+Last login: Mon Mar  2 12:52:38 on ttys003
+You have new mail.
+-bash: /Users/isabelangelo/Library/Enthought/Canopy_64bit/User/bin/activate: No such file or directory
+Isabel:~ isabelangelo$ cd Desktop/SubSaturnSimulation/
+Isabel:SubSaturnSimulation isabelangelo$ ssh isabelan@hoffman2.idre.ucla.edu
+The authenticity of host 'hoffman2.idre.ucla.edu (192.154.2.202)' can't be established.
+RSA key fingerprint is 3c:9c:67:d8:c5:a4:ae:77:07:5f:10:2f:20:4a:75:0f.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'hoffman2.idre.ucla.edu,192.154.2.202' (RSA) to the list of known hosts.
+isabelan@hoffman2.idre.ucla.edu's password: 
+Welcome to the Hoffman2 Cluster!
+
+Hoffman2 Home Page:     http://www.hoffman2.idre.ucla.edu
+Consulting:             https://support.idre.ucla.edu/helpdesk
+
+All login nodes should be accessed via "hoffman2.idre.ucla.edu".
+
+Please do NOT compute on the login nodes.
+
+Processes running on the login nodes which seriously degrade others'
+use of the system may be terminated without warning.  Use qrsh to obtain
+an interactive shell on a compute node for CPU or I/O intensive tasks.
+
+The following news items are currently posted:
+
+   New default version of the Intel compiler
+   IDRE Workshops and Training Sessions
+   News Archive On Web Site
+
+Enter shownews to read the full text of a news item.
+[isabelan@login2 ~]$ /u/local/bin/passwd
+Changing password for user isabelan.
+Please enter your current password: 
+
+Please adhere to the following rules when creating your password:
+You cannot use your username or a significant portion of it in your password.
+You need to have a minimum of 10 characters.
+You need to have at least 5 unique (different) characters.
+You need to have at least one character from 3 different character classes.
+The character classes are: UPPERCASE CHARACTERS, lowercase characters, digits (0-9),
+    and punctuation ((  !#%&)(+*-,/.;=<?>@[]\_^`{}|~  )).
+Please enter your NEW password: 
+
+Please re-enter your new password: 
+
+Password saved.  Strength: moderate.
+Please allow up to 15 minutes for your password to propagate to all cluster nodes.
+[isabelan@login2 ~]$ pwd
+/u/home/i/isabelan
+[isabelan@login2 ~]$ ls
+[isabelan@login2 ~]$ Write failed: Broken pipe
+Isabel:SubSaturnSimulation isabelangelo$ pwd
+/Users/isabelangelo/Desktop/SubSaturnSimulation
+Isabel:SubSaturnSimulation isabelangelo$ ssh isabelan@hoffman2.idre.ucla.edu
+isabelan@hoffman2.idre.ucla.edu's password: 
+Last login: Mon Mar  2 13:08:03 2020 from 128.97.102.10
+Welcome to the Hoffman2 Cluster!
+
+Hoffman2 Home Page:     http://www.hoffman2.idre.ucla.edu
+Consulting:             https://support.idre.ucla.edu/helpdesk
+
+All login nodes should be accessed via "hoffman2.idre.ucla.edu".
+
+Please do NOT compute on the login nodes.
+
+Processes running on the login nodes which seriously degrade others'
+use of the system may be terminated without warning.  Use qrsh to obtain
+an interactive shell on a compute node for CPU or I/O intensive tasks.
+
+The following news items are currently posted:
+
+   New default version of the Intel compiler
+   IDRE Workshops and Training Sessions
+   News Archive On Web Site
+
+Enter shownews to read the full text of a news item.
+[isabelan@login2 ~]$ pwd
+/u/home/i/isabelan
+[isabelan@login2 ~]$ ls
+IniCon  New_OSPE_SSE  Output
+[isabelan@login2 ~]$ cd Output/
+[isabelan@login2 Output]$ ls
+octupole.joblog.1  output_1.txt
+[isabelan@login2 Output]$ less output1/txt
+output1/txt: No such file or directory
+[isabelan@login2 Output]$ less output1.txt
+output1.txt: No such file or directory
+[isabelan@login2 Output]$ ls
+octupole.joblog.1  output_1.txt
+[isabelan@login2 Output]$ ls output_1.txt 
+output_1.txt
+[isabelan@login2 Output]$ less output_1.txt 
+[isabelan@login2 Output]$ pwd
+/u/home/i/isabelan/Output
+[isabelan@login2 Output]$ ls
+octupole.joblog.1  output_1.txt
+[isabelan@login2 Output]$ rm octupole.joblog.1 
+[isabelan@login2 Output]$ rm output_1.txt 
+[isabelan@login2 Output]$ ls
+[isabelan@login2 Output]$ cd ,,
+-bash: cd: ,,: No such file or directory
+[isabelan@login2 Output]$ cd ..
+[isabelan@login2 ~]$ ls
+IniCon  New_OSPE_SSE  Output
+[isabelan@login2 ~]$ cd New_OSPE_SSE/
+[isabelan@login2 New_OSPE_SSE]$ ls
+bsstep.c  HTI.print.c          nrutil.h     pzextr.c                       RunNewOSPE.prl
+bsstep.o  HTI.print.c~         nrutil.o     pzextr.o                       SSE
+dfridr.c  HTI.print.o          octupole     read_sse_cl.c                  StellarEvolution.c
+dfridr.o  HTI.printT.c         octupole.c   rkck.c                         StellarEvolution.c~
+fort.99   Makefile             octupole.c~  rkck.o                         StellarEvolution.o
+HTIBU.h   mmid.c               octupole.o   rkqs.c                         StellarEvolutionOLD.c
+HTI.c     mmid.o               odeint.c     rkqs.o                         test.txt
+HTI.h     New_OSPE_SSE.tar.gz  odeint.c~    RunNewOSPE_2020_WD_focus.prl   triple.in1
+HTI.h~    nrutil.c             odeint.o     RunNewOSPE_2020_WD_focus.prl~
+[isabelan@login2 New_OSPE_SSE]$ rm triple.in1
+[isabelan@login2 New_OSPE_SSE]$ pwd
+/u/home/i/isabelan/New_OSPE_SSE
+[isabelan@login2 New_OSPE_SSE]$ ls
+bsstep.c  HTIBU.h      HTI.print.c~  mmid.o               octupole     odeint.c~      rkck.c                        RunNewOSPE_2020_WD_focus.prl~  StellarEvolution.o
+bsstep.o  HTI.c        HTI.print.o   New_OSPE_SSE.tar.gz  octupole.c   odeint.o       rkck.o                        RunNewOSPE.prl                 StellarEvolutionOLD.c
+dfridr.c  HTI.h        HTI.printT.c  nrutil.c             octupole.c~  pzextr.c       rkqs.c                        SSE                            test.txt
+dfridr.o  HTI.h~       Makefile      nrutil.h             octupole.o   pzextr.o       rkqs.o                        StellarEvolution.c             triple.in1
+fort.99   HTI.print.c  mmid.c        nrutil.o             odeint.c     read_sse_cl.c  RunNewOSPE_2020_WD_focus.prl  StellarEvolution.c~
+[isabelan@login2 New_OSPE_SSE]$ emacs triple.in1
+[isabelan@login2 New_OSPE_SSE]$ Write failed: Broken pipe
+Isabel:SubSaturnSimulation isabelangelo$ ssh isabelan@hoffman2.idre.ucla.edu
+isabelan@hoffman2.idre.ucla.edu's password: 
+Welcome to the Hoffman2 Cluster!
+
+Hoffman2 Home Page:     http://www.hoffman2.idre.ucla.edu
+Consulting:             https://support.idre.ucla.edu/helpdesk
+
+All login nodes should be accessed via "hoffman2.idre.ucla.edu".
+
+Please do NOT compute on the login nodes.
+
+Processes running on the login nodes which seriously degrade others'
+use of the system may be terminated without warning.  Use qrsh to obtain
+an interactive shell on a compute node for CPU or I/O intensive tasks.
+
+The following news items are currently posted:
+
+   New default version of the Intel compiler
+   IDRE Workshops and Training Sessions
+   News Archive On Web Site
+
+Enter shownews to read the full text of a news item.
+[isabelan@login3 ~]$ cd New_OSPE_SSE/
+[isabelan@login3 New_OSPE_SSE]$ ls
+bsstep.c  HTI.c         HTI.printT.c         nrutil.h     odeint.c       rkck.c                         RunNewOSPE.prl         test.txt
+bsstep.o  HTI.h         Makefile             nrutil.o     odeint.c~      rkck.o                         SSE                    triple.in1
+dfridr.c  HTI.h~        mmid.c               octupole     odeint.o       rkqs.c                         StellarEvolution.c
+dfridr.o  HTI.print.c   mmid.o               octupole.c   pzextr.c       rkqs.o                         StellarEvolution.c~
+fort.99   HTI.print.c~  New_OSPE_SSE.tar.gz  octupole.c~  pzextr.o       RunNewOSPE_2020_WD_focus.prl   StellarEvolution.o
+HTIBU.h   HTI.print.o   nrutil.c             octupole.o   read_sse_cl.c  RunNewOSPE_2020_WD_focus.prl~  StellarEvolutionOLD.c
+[isabelan@login3 New_OSPE_SSE]$ perl RunNewOSPE.prl
+Your job 2240744 ("OSPE_1.cmd") has been submitted
+[isabelan@login3 New_OSPE_SSE]$ ls ../Output/
+[isabelan@login3 New_OSPE_SSE]$ ls ../Output/
+[isabelan@login3 New_OSPE_SSE]$ ls ../Output/
+octupole.joblog.1  output_1.txt
+[isabelan@login3 New_OSPE_SSE]$ cd ../Output/
+[isabelan@login3 Output]$ ls
+octupole.joblog.1  output_1.txt
+[isabelan@login3 Output]$ less output_1.txt 
+[isabelan@login3 Output]$ Write failed: Broken pipe
+Isabel:SubSaturnSimulation isabelangelo$ pws
+-bash: pws: command not found
+Isabel:SubSaturnSimulation isabelangelo$ pwd
+/Users/isabelangelo/Desktop/SubSaturnSimulation
+Isabel:SubSaturnSimulation isabelangelo$ ssh isabelan@hoffman2.idre.ucla.edu
+isabelan@hoffman2.idre.ucla.edu's password: 
+Welcome to the Hoffman2 Cluster!
+
+Hoffman2 Home Page:     http://www.hoffman2.idre.ucla.edu
+Consulting:             https://support.idre.ucla.edu/helpdesk
+
+All login nodes should be accessed via "hoffman2.idre.ucla.edu".
+
+Please do NOT compute on the login nodes.
+
+Processes running on the login nodes which seriously degrade others'
+use of the system may be terminated without warning.  Use qrsh to obtain
+an interactive shell on a compute node for CPU or I/O intensive tasks.
+
+The following news items are currently posted:
+
+   New default version of the Intel compiler
+   IDRE Workshops and Training Sessions
+   News Archive On Web Site
+
+Enter shownews to read the full text of a news item.
+[isabelan@login1 ~]$ pwd
+/u/home/i/isabelan
+[isabelan@login1 ~]$ ls
+IniCon  New_OSPE_SSE  Output
+[isabelan@login1 ~]$ pwd
+/u/home/i/isabelan
+[isabelan@login1 ~]$ cd IniCon/
+[isabelan@login1 IniCon]$ ls
+[isabelan@login1 IniCon]$ cd ../Output/
+[isabelan@login1 Output]$ ls
+octupole.joblog.1  output_1.txt
+[isabelan@login1 Output]$ less output_1.txt 
+[isabelan@login1 Output]$ less octupole.joblog.1 
+[isabelan@login1 Output]$ cd ../New_OSPE_SSE/
+[isabelan@login1 New_OSPE_SSE]$ ls
+bsstep.c  HTI.c         HTI.printT.c         nrutil.h     odeint.c       rkck.c                         RunNewOSPE.prl         test.txt
+bsstep.o  HTI.h         Makefile             nrutil.o     odeint.c~      rkck.o                         SSE                    triple.in1
+dfridr.c  HTI.h~        mmid.c               octupole     odeint.o       rkqs.c                         StellarEvolution.c
+dfridr.o  HTI.print.c   mmid.o               octupole.c   pzextr.c       rkqs.o                         StellarEvolution.c~
+fort.99   HTI.print.c~  New_OSPE_SSE.tar.gz  octupole.c~  pzextr.o       RunNewOSPE_2020_WD_focus.prl   StellarEvolution.o
+HTIBU.h   HTI.print.o   nrutil.c             octupole.o   read_sse_cl.c  RunNewOSPE_2020_WD_focus.prl~  StellarEvolutionOLD.c
+[isabelan@login1 New_OSPE_SSE]$ mv triple.in1 ../IniCon/
+[isabelan@login1 New_OSPE_SSE]$ less RunNewOSPE_2020_WD_focus.prl
+[isabelan@login1 New_OSPE_SSE]$ ./octupole ../IniCon/ 1 > ../Output/Test1.txt
+-bash: ./octupole: cannot execute binary file
+[isabelan@login1 New_OSPE_SSE]$ ./octupole 
+-bash: ./octupole: cannot execute binary file
+[isabelan@login1 New_OSPE_SSE]$ make clean
+rm -f HTI.print.o octupole.o bsstep.o mmid.o nrutil.o odeint.o pzextr.o rkck.o rkqs.o StellarEvolution.o dfridr.o octupole
+[isabelan@login1 New_OSPE_SSE]$ make
+gcc -Wall -Wno-unused -O3  -c HTI.print.c -o HTI.print.o
+HTI.print.c: In function ‘main’:
+HTI.print.c:1244: warning: operation on ‘sqrarg’ may be undefined
+HTI.print.c:1245: warning: operation on ‘sqrarg’ may be undefined
+HTI.print.c:1372: warning: operation on ‘sqrarg’ may be undefined
+HTI.print.c:1386: warning: operation on ‘sqrarg’ may be undefined
+HTI.print.c:1433: warning: operation on ‘sqrarg’ may be undefined
+HTI.print.c:1433: warning: operation on ‘sqrarg’ may be undefined
+HTI.print.c:1434: warning: operation on ‘sqrarg’ may be undefined
+HTI.print.c:1434: warning: operation on ‘sqrarg’ may be undefined
+HTI.print.c:1742: warning: operation on ‘sqrarg’ may be undefined
+HTI.print.c:1743: warning: operation on ‘sqrarg’ may be undefined
+HTI.print.c:1233: warning: ‘spintot’ may be used uninitialized in this function
+HTI.print.c:1247: warning: ‘spintot2’ may be used uninitialized in this function
+HTI.print.c:252: warning: ‘t’ may be used uninitialized in this function
+gcc -Wall -Wno-unused -O3  -c octupole.c -o octupole.o
+octupole.c: In function ‘octupole’:
+octupole.c:166: warning: operation on ‘sqrarg’ may be undefined
+octupole.c:168: warning: operation on ‘sqrarg’ may be undefined
+octupole.c:319: warning: operation on ‘sqrarg’ may be undefined
+octupole.c:348: warning: operation on ‘sqrarg’ may be undefined
+octupole.c:348: warning: operation on ‘sqrarg’ may be undefined
+octupole.c:348: warning: operation on ‘sqrarg’ may be undefined
+octupole.c:350: warning: operation on ‘sqrarg’ may be undefined
+octupole.c:498: warning: operation on ‘sqrarg’ may be undefined
+octupole.c:500: warning: suggest parentheses around ‘&&’ within ‘||’
+octupole.c:506: warning: operation on ‘sqrarg’ may be undefined
+octupole.c:508: warning: suggest parentheses around ‘&&’ within ‘||’
+octupole.c:539: warning: operation on ‘sqrarg’ may be undefined
+octupole.c:539: warning: operation on ‘sqrarg’ may be undefined
+octupole.c:539: warning: operation on ‘sqrarg’ may be undefined
+octupole.c:548: warning: operation on ‘sqrarg’ may be undefined
+octupole.c:548: warning: operation on ‘sqrarg’ may be undefined
+octupole.c:548: warning: operation on ‘sqrarg’ may be undefined
+octupole.c:22: warning: ‘m3’ may be used uninitialized in this function
+octupole.c:32: warning: ‘tF1’ may be used uninitialized in this function
+octupole.c:32: warning: ‘tF2’ may be used uninitialized in this function
+gcc -Wall -Wno-unused -O3  -c bsstep.c -o bsstep.o
+gcc -Wall -Wno-unused -O3  -c mmid.c -o mmid.o
+gcc -Wall -Wno-unused -O3  -c nrutil.c -o nrutil.o
+gcc -Wall -Wno-unused -O3  -c odeint.c -o odeint.o
+odeint.c: In function ‘odeint’:
+odeint.c:61: warning: operation on ‘sqrarg’ may be undefined
+odeint.c:143: warning: operation on ‘sqrarg’ may be undefined
+odeint.c:25: warning: ‘e1’ may be used uninitialized in this function
+odeint.c:25: warning: ‘a1’ may be used uninitialized in this function
+gcc -Wall -Wno-unused -O3  -c pzextr.c -o pzextr.o
+gcc -Wall -Wno-unused -O3  -c rkck.c -o rkck.o
+gcc -Wall -Wno-unused -O3  -c rkqs.c -o rkqs.o
+gcc -Wall -Wno-unused -O3  -c StellarEvolution.c -o StellarEvolution.o
+gcc -Wall -Wno-unused -O3  -c dfridr.c -o dfridr.o
+dfridr.c: In function ‘dfridr’:
+dfridr.c:13: warning: ‘ans’ may be used uninitialized in this function
+gcc -Wall -Wno-unused -O3  HTI.print.o octupole.o bsstep.o mmid.o nrutil.o odeint.o pzextr.o rkck.o rkqs.o StellarEvolution.o dfridr.o -o octupole -lm
+[isabelan@login1 New_OSPE_SSE]$ ./octupole ../IniCon/ 1 > ../Output/Test1.txt
+ Reading: ../IniCon/triple.in1 
+spin=1.000000e+01
+spin=2.294933e+02
+running SSE with mass=1.030000e+00 M_sun ...
+in SSE: spin=2.294933e+02
+1001 tdis[1]=9.827955e+03 Myr 
+2001 tdis[2]=1.034566e+04 Myr 
+2577 tdis[3]=1.105291e+04 Myr 
+2678 tdis[4]=1.118490e+04 Myr 
+2816 tdis[5]=1.118945e+04 Myr 
+2888 tdis[6]=1.118968e+04 Myr 
+   final raduis is: 6.469518e-05 AU which is 1.391554e-02 Rsun 
+spin=1.113500e+03
+Hsq=1.211439e+01 L1=2.079501e-03 L2=4.873523e+00 L1art=9.299812e-04
+H1=1.824642e-04 H2=3.480391e+00
+G1=2.079397e-03 G2=3.480391e+00
+theta1=8.774862e-02 theta2=9.999998e-01
+
+============================== Initial Conditions ==============================
+	m1=1.030 m2=0.000 m3=0.095 [Msun] a1=5.000 a2=70.000 [AU] k2=39.478
+	R1=4.276337e-03 R2=2.135811e-04  [AU] Spin period: 1.113500e+03 2.294933e+02 [rad/yr] 
+	e1=0.010 g1=211.52450 e2=0.700 g2=111.60694 i=85.000
+        Initial incl: :: i1=84.965900 i2=0.034100 i1+i2=85.000000 i=85.000000
+
+	Integration stopped at 7572000000 years, Inner Period=1e+01 years, Outer Period=5.520139e+02 years
+	e1_max calc'd from i= 0.993650
+	This means that r_p= 3.175133e-02 AU
+	Kozai Period= 2.01642e+04 years
+	GR Period= 2.03351e+09 years---1.60622e+11 years
+
+       Running OSPE with the following options on: 
+       OCTUPOLE 
+       QUADRUPOLE 
+       GR 
+       TIDAL FRICTION 
+       MASS LOSS for m1 
+       Magnetic Braking for m1 
+       SSE for m1
+   
+        TV1=1.500000yr TV2=1.500000yr
+        kL1=0.014403yr kL2=0.249963yr
+        QoftV1=6.170677e+03 QoftV2=1.717876e+05
+   
+ epsilon=9.803922e-02 epsilonM=9.801145e-02
+ 
+ The 2*Roche limit is 6.829817e-03 AU
+
+================================================================================
+
+    Some control paramters:
+    first step: 5.520139e-14
+    eps  1.000000e-16
+Integrating ....
+
+before integrations
+ Hsquar=1.211439e+01 t=0.000000e+00 yr
+G1=2.079397e-03 G2=3.480391e+00 cosi=8.715574e-02 htot=1.425911e+01
+m1=1.030000e+00 m2=1.458500e-04 m3=9.548000e-02 e2=7.000000e-01 a2=7.000000e+01 a1=5.000000e+00 e1=1.000000e-02
+in octupole t=0
+t=0.000000e+00 Hsq=1.211439e+01
+G1=2.079397e-03 G2=3.480391e+00 cosi=8.715574e-02 htot=1.425911e+01
+m1=1.030000e+00 m2=1.458500e-04 m3=9.548000e-02 e2=7.000000e-01 a2=7.000000e+01 a1=5.000000e+00 e1=1.000000e-02
+   ******************* Roche Lobe overflow!!! *******************
+ star 1: ::::: a1*(1-e1)=3.956876e-03 AU >= Roche1 (=7.127578e-03 AU) ::::: 
+ star 2: ::::: a1*(1-e1)=3.956876e-03 AU >= Roche2 (=6.829817e-03 AU) ::::: 
+  the time is: 7.783466e+04 years 
+ Terminating now...
+	    -------
+	    i1max=84.988311 i1min=54.670302 
+	    mutual: imax=85.022084 imin=54.671414 
+	            betamax=51.130818 betamin=0.000000 
+	    emin=0.002493 emax=0.999175
+[isabelan@login1 New_OSPE_SSE]$ cat ../Output/Test1.txt 
+1 	 1 	 0.000000 	1.000000e-02 	 7.000000e-01 	 3.691799e+00 	 1.947909e+00 	 5.000000e+00 	  8.496590e+01 	  3.409994e-02   	  8.500000e+01   1.113500e+03 	  0.000000e+00 	  0.000000e+00 	  0.000000e+00 	  0.000000e+00   	  0.000000e+00 	  0.000000e+00 	  0.000000e+00 	  2.294933e+02 	  1.425911e+01   1.030000e+00 	  4.276337e-03  	  1.458500e-04 	 2.135811e-04 	 7.000000e+01 	 9.548000e-02 	 0.000000e+00 	 4.824508e-04 	 1.000000 	 -1.000000 	 -1.000000 	 0.000000e+00 	 4.500000e+01 	 4.500000e+01 	 
+1 	 2 	 77027.838826 	9.963522e-01 	 6.999737e-01 	 7.673585e-01 	 2.348563e+00 	 4.999997e+00 	  7.155754e+01 	  2.771297e-03   	  7.156031e+01   9.983722e+02 	  1.112272e+03 	  2.615598e+01 	  7.156031e+01 	  1.519251e+02   	  -4.661762e+02 	  2.429219e+01 	  -9.897789e+01 	  2.056951e+02   1.216878e+00 	  1.030000e+00 	  4.276345e-03  	  1.458500e-04 	 2.135811e-04 	 7.000000e+01 	 9.548000e-02 	 7.127577e-03 	 2.228821e-04 	 1.000000 	 -1.000000 	 -1.000000 	 2.635694e+01 	 7.194940e+01 	 7.621043e+01 	 
+1 	 2 	 77229.501837 	9.963522e-01 	 6.999737e-01 	 7.673585e-01 	 2.348563e+00 	 4.999997e+00 	  7.155754e+01 	  2.771297e-03   	  7.156031e+01   9.983722e+02 	  1.112272e+03 	  2.615598e+01 	  7.156031e+01 	  1.519251e+02   	  -4.661762e+02 	  2.429219e+01 	  -9.897789e+01 	  2.056951e+02   1.216878e+00 	  1.030000e+00 	  4.276345e-03  	  1.458500e-04 	 2.135811e-04 	 7.000000e+01 	 9.548000e-02 	 7.127577e-03 	 2.228821e-04 	 1.000000 	 -1.000000 	 -1.000000 	 2.635694e+01 	 7.194940e+01 	 7.621043e+01 	 
+1 	 2 	 77229.501837 	9.976123e-01 	 6.999731e-01 	 7.890822e-01 	 2.410532e+00 	 4.999930e+00 	  6.818033e+01 	  2.194921e-03   	  6.818253e+01   9.563802e+02 	  1.112269e+03 	  3.070065e+01 	  6.818253e+01 	  1.517885e+02   	  -5.472098e+02 	  1.908624e+01 	  -1.167075e+02 	  1.974963e+02   9.848217e-01 	  1.030000e+00 	  4.276345e-03  	  1.458500e-04 	 2.135811e-04 	 7.000000e+01 	 9.548000e-02 	 7.127577e-03 	 2.228821e-04 	 1.000000 	 -1.000000 	 -1.000000 	 3.091257e+01 	 7.449672e+01 	 8.071212e+01 	 
+0 	 2 	 77834.662434 	9.991745e-01 	 6.999719e-01 	 9.837776e-01 	 2.728992e+00 	 4.793462e+00 	  5.467030e+01 	  1.111541e-03   	  5.467141e+01   6.979939e+02 	  1.112262e+03 	  5.113082e+01 	  5.467141e+01 	  1.199536e+02   	  -8.576380e+02 	  -6.415665e+01 	  -2.011468e+02 	  6.099797e+02 	  5.671929e-01 	  1.030000e+00 	  4.276345e-03  	  1.458500e-04 	 2.135811e-04 	 7.000000e+01 	 9.548000e-02 	 7.127578e-03 	 4.824516e-04 	 1.000000 	 -1.000000 	 -1.000000 	 1.909213e+01 	 8.203797e+01 	 1.076903e+02 	 
+[isabelan@login1 New_OSPE_SSE]$ cd ../IniCon/
+[isabelan@login1 IniCon]$ emacs -nw
+[isabelan@login1 IniCon]$ cd ../
+[isabelan@login1 ~]$ pwd
+/u/home/i/isabelan
+[isabelan@login1 ~]$ ls
+IniCon  New_OSPE_SSE  Output
+[isabelan@login1 ~]$ cd New_OSPE_SSE/
+[isabelan@login1 New_OSPE_SSE]$ ./octupole ../IniCon/ 1 > ../Output/Test2.txt
+ Reading: ../IniCon/triple.in1 
+spin=1.000000e+01
+spin=2.294933e+02
+running SSE with mass=1.030000e+00 M_sun ...
+in SSE: spin=2.294933e+02
+1001 tdis[1]=9.827955e+03 Myr 
+2001 tdis[2]=1.034566e+04 Myr 
+2577 tdis[3]=1.105291e+04 Myr 
+2678 tdis[4]=1.118490e+04 Myr 
+2816 tdis[5]=1.118945e+04 Myr 
+2888 tdis[6]=1.118968e+04 Myr 
+   final raduis is: 6.469518e-05 AU which is 1.391554e-02 Rsun 
+spin=1.113500e+03
+Hsq=1.782084e+01 L1=2.079501e-03 L2=4.873523e+00 L1art=9.299812e-04
+H1=8.796325e-04 H2=4.220594e+00
+G1=2.079397e-03 G2=4.220594e+00
+theta1=4.230228e-01 theta2=9.999999e-01
+
+============================== Initial Conditions ==============================
+	m1=1.030 m2=0.000 m3=0.095 [Msun] a1=5.000 a2=70.000 [AU] k2=39.478
+	R1=4.276337e-03 R2=2.135811e-04  [AU] Spin period: 1.113500e+03 2.294933e+02 [rad/yr] 
+	e1=0.010 g1=211.52450 e2=0.500 g2=111.60694 i=65.000
+        Initial incl: :: i1=64.974422 i2=0.025578 i1+i2=65.000000 i=65.000000
+
+	Integration stopped at 7572000000 years, Inner Period=1e+01 years, Outer Period=5.520139e+02 years
+	e1_max calc'd from i= 0.838047
+	This means that r_p= 8.097643e-01 AU
+	Kozai Period= 3.59598e+04 years
+	GR Period= 1.12423e+12 years---3.77668e+12 years
+
+       Running OSPE with the following options on: 
+       OCTUPOLE 
+       QUADRUPOLE 
+       GR 
+       TIDAL FRICTION 
+       MASS LOSS for m1 
+       Magnetic Braking for m1 
+       SSE for m1
+   
+        TV1=1.500000yr TV2=1.500000yr
+        kL1=0.014403yr kL2=0.249963yr
+        QoftV1=6.170677e+03 QoftV2=1.717876e+05
+   
+ epsilon=4.761905e-02 epsilonM=4.760556e-02
+ 
+ The 2*Roche limit is 6.829817e-03 AU
+
+================================================================================
+
+    Some control paramters:
+    first step: 5.520139e-14
+    eps  1.000000e-16
+Integrating ....
+
+before integrations
+ Hsquar=1.782084e+01 t=0.000000e+00 yr
+G1=2.079397e-03 G2=4.220594e+00 cosi=4.226183e-01 htot=1.425911e+01
+m1=1.030000e+00 m2=1.458500e-04 m3=9.548000e-02 e2=5.000000e-01 a2=7.000000e+01 a1=5.000000e+00 e1=1.000000e-02
+in octupole t=0
+t=0.000000e+00 Hsq=1.782084e+01
+G1=2.079397e-03 G2=4.220594e+00 cosi=4.226183e-01 htot=1.425911e+01
+m1=1.030000e+00 m2=1.458500e-04 m3=9.548000e-02 e2=5.000000e-01 a2=7.000000e+01 a1=5.000000e+00 e1=1.000000e-02
+   ******************* Roche Lobe overflow!!! *******************
+ star 1: ::::: a1*(1-e1)=6.757380e-03 AU >= Roche1 (=7.127836e-03 AU) ::::: 
+ star 2: ::::: a1*(1-e1)=6.757380e-03 AU >= Roche2 (=6.829817e-03 AU) ::::: 
+  the time is: 1.628200e+06 years 
+ Terminating now...
+	    -------
+	    i1max=86.664360 i1min=38.600000 
+	    mutual: imax=86.691278 imin=38.601614 
+	            betamax=140.288981 betamin=0.000000 
+	    emin=0.007143 emax=0.998645
+[isabelan@login1 New_OSPE_SSE]$ pwd
+/u/home/i/isabelan/New_OSPE_SSE
+[isabelan@login1 New_OSPE_SSE]$ cd ../IniCon/
+[isabelan@login1 IniCon]$ emacs triple.in1
+[isabelan@login1 IniCon]$ cd ../New_OSPE_SSE/
+[isabelan@login1 New_OSPE_SSE]$ ./octupole ../IniCon/ 1 > ../Output/Test3.txt
+ Reading: ../IniCon/triple.in1 
+spin=1.000000e+01
+spin=2.294933e+02
+running SSE with mass=1.030000e+00 M_sun ...
+in SSE: spin=2.294933e+02
+1001 tdis[1]=9.827955e+03 Myr 
+2001 tdis[2]=1.034566e+04 Myr 
+2577 tdis[3]=1.105291e+04 Myr 
+2678 tdis[4]=1.118490e+04 Myr 
+2816 tdis[5]=1.118945e+04 Myr 
+2888 tdis[6]=1.118968e+04 Myr 
+   final raduis is: 6.469518e-05 AU which is 1.391554e-02 Rsun 
+spin=1.113500e+03
+Hsq=3.054700e+01 L1=2.079501e-03 L2=6.380939e+00 L1art=9.299812e-04
+H1=8.794338e-04 H2=5.526055e+00
+G1=2.079397e-03 G2=5.526055e+00
+theta1=4.229273e-01 theta2=9.999999e-01
+
+============================== Initial Conditions ==============================
+	m1=1.030 m2=0.000 m3=0.095 [Msun] a1=5.000 a2=120.000 [AU] k2=39.478
+	R1=4.276337e-03 R2=2.135811e-04  [AU] Spin period: 1.113500e+03 2.294933e+02 [rad/yr] 
+	e1=0.010 g1=211.52450 e2=0.500 g2=111.60694 i=65.000
+        Initial incl: :: i1=64.980463 i2=0.019537 i1+i2=65.000000 i=65.000000
+
+	Integration stopped at 7572000000 years, Inner Period=1e+01 years, Outer Period=1.239010e+03 years
+	e1_max calc'd from i= 0.838047
+	This means that r_p= 8.097643e-01 AU
+	Kozai Period= 1.81162e+05 years
+	GR Period= 1.12423e+12 years---3.77668e+12 years
+
+       Running OSPE with the following options on: 
+       OCTUPOLE 
+       QUADRUPOLE 
+       GR 
+       TIDAL FRICTION 
+       MASS LOSS for m1 
+       Magnetic Braking for m1 
+       SSE for m1
+   
+        TV1=1.500000yr TV2=1.500000yr
+        kL1=0.014403yr kL2=0.249963yr
+        QoftV1=6.170677e+03 QoftV2=1.717876e+05
+   
+ epsilon=2.777778e-02 epsilonM=2.776991e-02
+ 
+ The 2*Roche limit is 6.829817e-03 AU
+
+================================================================================
+
+    Some control paramters:
+    first step: 1.239010e-13
+    eps  1.000000e-16
+Integrating ....
+
+before integrations
+ Hsquar=3.054700e+01 t=0.000000e+00 yr
+G1=2.079397e-03 G2=5.526055e+00 cosi=4.226183e-01 htot=1.425911e+01
+m1=1.030000e+00 m2=1.458500e-04 m3=9.548000e-02 e2=5.000000e-01 a2=1.200000e+02 a1=5.000000e+00 e1=1.000000e-02
+in octupole t=0
+t=0.000000e+00 Hsq=3.054700e+01
+G1=2.079397e-03 G2=5.526055e+00 cosi=4.226183e-01 htot=1.425911e+01
+m1=1.030000e+00 m2=1.458500e-04 m3=9.548000e-02 e2=5.000000e-01 a2=1.200000e+02 a1=5.000000e+00 e1=1.000000e-02
+   ******************* Roche Lobe overflow!!! *******************
+ star 1: ::::: a1*(1-e1)=6.822885e-03 AU >= Roche1 (=7.207335e-03 AU) ::::: 
+ star 2: ::::: a1*(1-e1)=6.822885e-03 AU >= Roche2 (=6.829817e-03 AU) ::::: 
+  the time is: 5.045222e+08 years 
+ Terminating now...
+	    -------
+	    i1max=87.317596 i1min=38.365649 
+	    mutual: imax=87.338044 imin=38.367477 
+	            betamax=134.279090 betamin=0.000000 
+	    emin=0.002013 emax=0.998586
+[isabelan@login1 New_OSPE_SSE]$ less ../Output/output_1.txt 
+[isabelan@login1 New_OSPE_SSE]$ ./octupole ../IniCon/ 1 > ../Output/Test3t
+ Reading: ../IniCon/triple.in1 
+spin=1.000000e+01
+spin=2.294933e+02
+running SSE with mass=1.030000e+00 M_sun ...
+in SSE: spin=2.294933e+02
+1001 tdis[1]=9.827955e+03 Myr 
+2001 tdis[2]=1.034566e+04 Myr 
+2577 tdis[3]=1.105291e+04 Myr 
+2678 tdis[4]=1.118490e+04 Myr 
+2816 tdis[5]=1.118945e+04 Myr 
+2888 tdis[6]=1.118968e+04 Myr 
+   final raduis is: 6.469518e-05 AU which is 1.391554e-02 Rsun 
+spin=1.113500e+03
+Hsq=3.054700e+01 L1=2.079501e-03 L2=6.380939e+00 L1art=9.299812e-04
+H1=8.794338e-04 H2=5.526055e+00
+G1=2.079397e-03 G2=5.526055e+00
+theta1=4.229273e-01 theta2=9.999999e-01
+
+============================== Initial Conditions ==============================
+	m1=1.030 m2=0.000 m3=0.095 [Msun] a1=5.000 a2=120.000 [AU] k2=39.478
+	R1=4.276337e-03 R2=2.135811e-04  [AU] Spin period: 1.113500e+03 2.294933e+02 [rad/yr] 
+	e1=0.010 g1=211.52450 e2=0.500 g2=111.60694 i=65.000
+        Initial incl: :: i1=64.980463 i2=0.019537 i1+i2=65.000000 i=65.000000
+
+	Integration stopped at 7572000000 years, Inner Period=1e+01 years, Outer Period=1.239010e+03 years
+	e1_max calc'd from i= 0.838047
+	This means that r_p= 8.097643e-01 AU
+	Kozai Period= 1.81162e+05 years
+	GR Period= 1.12423e+12 years---3.77668e+12 years
+
+       Running OSPE with the following options on: 
+       OCTUPOLE 
+       QUADRUPOLE 
+       GR 
+       TIDAL FRICTION 
+       MASS LOSS for m1 
+       Magnetic Braking for m1 
+       SSE for m1
+   
+        TV1=1.500000yr TV2=1.500000yr
+        kL1=0.014403yr kL2=0.249963yr
+        QoftV1=6.170677e+03 QoftV2=1.717876e+05
+   
+ epsilon=2.777778e-02 epsilonM=2.776991e-02
+ 
+ The 2*Roche limit is 6.829817e-03 AU
+
+================================================================================
+
+    Some control paramters:
+    first step: 1.239010e-13
+    eps  1.000000e-16
+Integrating ....
+
+before integrations
+ Hsquar=3.054700e+01 t=0.000000e+00 yr
+G1=2.079397e-03 G2=5.526055e+00 cosi=4.226183e-01 htot=1.425911e+01
+m1=1.030000e+00 m2=1.458500e-04 m3=9.548000e-02 e2=5.000000e-01 a2=1.200000e+02 a1=5.000000e+00 e1=1.000000e-02
+in octupole t=0
+t=0.000000e+00 Hsq=3.054700e+01
+G1=2.079397e-03 G2=5.526055e+00 cosi=4.226183e-01 htot=1.425911e+01
+m1=1.030000e+00 m2=1.458500e-04 m3=9.548000e-02 e2=5.000000e-01 a2=1.200000e+02 a1=5.000000e+00 e1=1.000000e-02
+^[[A^[[B
+
+
+
+^C
+[isabelan@login1 New_OSPE_SSE]$ 
+[isabelan@login1 New_OSPE_SSE]$ 
+[isabelan@login1 New_OSPE_SSE]$ ./octupole ../IniCon/ 1 > ../Output/Test3
+Test3t     Test3.txt  
+[isabelan@login1 New_OSPE_SSE]$ ./octupole ../IniCon/ 1 > ../Output/Test3
+Test3t     Test3.txt  
+[isabelan@login1 New_OSPE_SSE]$ less ../IniCon/triple.in1
+[isabelan@login1 New_OSPE_SSE]$ ls ../Output/
+octupole.joblog.1  output_1.txt  Test1.txt  Test2.txt  Test3t  Test3.txt
+[isabelan@login1 New_OSPE_SSE]$ less ../Output/Test3.txt
+[isabelan@login1 New_OSPE_SSE]$ Write failed: Broken pipe
+Isabel:SubSaturnSimulation isabelangelo$ pwd
+/Users/isabelangelo/Desktop/SubSaturnSimulation
+Isabel:SubSaturnSimulation isabelangelo$ 
