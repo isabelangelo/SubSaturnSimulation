@@ -1,0 +1,24 @@
+SHELL = /bin/bash
+
+CC = gcc
+CFLAGS = 
+ALL_CFLAGS = -Wall -Wno-unused -O3 $(CFLAGS)
+
+##OBJS =  HTI.o octupole.o bsstep.o mmid.o nrutil.o odeint.o pzextr.o rkck.o rkqs.o 
+OBJS =  HTI.print.o octupole.o bsstep.o mmid.o nrutil.o odeint.o pzextr.o rkck.o rkqs.o StellarEvolution.o dfridr.o
+LIBS = -lm
+EXE = octupole
+
+# pattern rule to compile object files from C files
+# might not work with make programs other than GNU make
+%.o : %.c Makefile nrutil.h HTI.h
+	$(CC) $(ALL_CFLAGS) -c $< -o $@
+
+all: $(EXE)
+
+$(EXE): $(OBJS) Makefile
+	$(CC) $(ALL_CFLAGS) $(OBJS) -o $(EXE) $(LIBS)
+
+.PHONY : clean
+clean:
+	rm -f $(OBJS) $(EXE)

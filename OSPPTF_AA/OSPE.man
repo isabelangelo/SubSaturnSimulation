@@ -1,0 +1,43 @@
+                                   OSPE Tutorial
+This is meant to provide the basic information necessary to run OSPE successfully.As its name suggests, OSPE integrates the Octupole-level Secular Perturbation Equations + tidal friction  using the Runge-Kutta 4th Order   method. Because the most essential files of this code are triple.in, octupole.c, HTI.h and HTI.c these will be the focus of this brief tutorial.
+
+## if you have any questions conntact smadar naoz at: smadar.naoz@gmail.com
+
+
+#############################triple.in#########################################
+triple.in takes in the initial orbital parameters for a triple system. These include the three masses (m1,m2,m3) in solar masses, the semi-major axes of the non-central bodies (a1,a2) in AU, the eccentricities of the non-central bodies (e1,e2), the arguments of pericenter for the non-central bodies (g1,g2), the mutual inclination (i) and desired runtime (age) for the simulation. There also exists a contol parameter, eps, which controls the allowed error of the simulation. All entries must be provided below the symbols (ex. a1) they correspond to. They must all be filled in and cannot be left blank.
+
+smadar:: the eps is 1.e-16. I know that this is VERY small. DO NOT CHANGE it.
+This value has been tested to give the best conservation of SMA. changing it will give wrong results!!
+
+
+#############################octupole.c########################################
+octupole.c is a key component of the integration scheme and shows how the orbital parameters are evolved in each time step. 
+
+#############################HTI.h#############################################
+HTI.h Here you should define the viscous time in years!!
+
+#### triple.in  ######## 
+NOTE: if you have the inclination OSPE version, the files are different!!!!!
+This file is very useful for turning on/off the quadrupole-level, octupole-level and GR effects. By default, they are all on. Also, note that you need to have assumption about the spins in days!!and the radii.
+
+##############################HTI.c###########################################
+HTI.c is what actually runs the integration and prints out the results. It is useful if one desires to change the form of the output.
+
+#############################Compiling and Running#############################
+Compiling OSPE is as simple as using the make command, whih runs the Makefile that accompanies the program. This creates the executable octupole which can be run simply by ./octupole. By default, this just prints out the results to the screen. To put it in a file just run ./octupole > filename.txt
+
+##### smadar: this is an inclination version
+here instead of the usual 4 parameter form Frod et al 2000 I integrate over 14 parameters to checkhave the inclinations of the inner outer and mutual inclinations, and also the spin orientation of bouth the inner binary objects. Assume only total angular momenutm conservation. This version has been check via n-body and everything is great!!
+The initial inner and outer inclinations are set by the total angular momentum and the mutual inclination.
+Note, the inlicnation is calcualted assuming total angular momentu, conservation, this has proven to be more accureat then using the equaitons from Naoz et al 2011 (in prep.)
+
+
+### smadar:
+## if you are using this version I would ask you to cite Ford et al 2000 and Naoz et al 2011 (in prep.)
+
+
+
+Hopefully this tutorial provided the essential information to run OSPE successively.
+
+Last update May 2011

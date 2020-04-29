@@ -1,0 +1,54 @@
+#!/usr/bin/perl 
+#@i= (12, 14, 15, 17, 24, 73, 81, 82, 95, 100, 102, 126, 127, 132, 136, 149, 157, 173, 174, 176, 183, 199, 214, 236, 245, 247, 248, 292, 295, 304, 305, 313, 328, 349, 355, 360, 367, 377, 379, 383, 390, 391, 399, 405, 407, 409, 410, 411, 412, 437, 470, 483, 491, 522, 523, 560, 578, 587, 597, 618, 621, 626, 627, 637, 638, 643, 645, 653, 656, 663, 700, 703, 731, 743, 750, 763, 764, 768, 777, 778, 796, 798, 800, 805, 806, 808, 839, 840, 846, 851, 877, 919, 920, 934, 968, 969, 1009, 1017, 1027, 1064, 1114, 1126, 1128, 1144, 1145, 1152, 1189, 1196, 1199, 1206, 1208, 1215, 1226, 1261, 1262, 1287, 1303, 1305, 1309, 1326, 1335, 1344, 1352, 1376, 1382, 1425, 1429, 1438, 1439, 1461, 1495, 1496, 1497, 1498, 1505, 1513, 1518, 1521, 1523, 1526, 1535, 1545, 1555, 1559, 1573, 1582, 1585, 1595, 1598, 1606, 1613, 1625, 1635, 1646, 1667, 1689, 1696, 1699, 1742, 1756, 1757, 1758, 1763, 1777, 1778, 1782, 1814, 1824, 1831, 1838, 1844, 1848, 1870, 1877, 1901, 1919, 1922, 1923, 1931, 1934, 1949, 1951, 1952, 1955, 1968, 2000);
+for (my $i=1; $i<=400;$i+=1){
+#foreach my $i (@i){
+#\$ -l h_data=4G,h_rt=168:00:00,highp 
+my $filename = "OSPE_$i.cmd";
+open (my $fh, '>', $filename);
+print $fh "#!/bin/csh -f
+#\$ -cwd#
+#\$ -o /u/home/a/alexpste/Output_WD_2020_focus/octupole.joblog.$i
+#\$ -j y
+#\$ -l h_data=4G,h_rt=24:00:00
+##,highp
+#\$ -v QQAPP=job
+#  Job is not rerunable
+#\$ -r n
+#
+# Initialization for serial execution
+#
+  unalias *
+  set qqversion = 
+  set qqapp     = 'job serial'
+  set qqidir    = /u/home/a/alexpste/New_OSPE_SSE
+  set qqjob     = octupole
+  set qqodir    = /u/home/a/alexpste/New_OSPE_SSE
+  cd     /u/home/a/alexpste/New_OSPE_SSE
+  source /u/local/bin/qq.sge/qr.runtime
+  if (\$status != 0) exit (1)
+#
+# Run the user program
+#
+  source /u/local/Modules/default/init/modules.csh
+  module load intel/13.cs
+#
+  /u/home/a/alexpste/New_OSPE_SSE/octupole /u/home/a/alexpste/IniConWD2020_focus/ $i > /u/home/a/alexpste/Output_WD_2020_focus/output_$i.txt
+#
+# Cleanup after serial execution
+#
+  source /u/local/bin/qq.sge/qr.runtime
+#
+  echo '-------- /u/home/a/alexpste/Output_WD_2020_focus/octupole.joblog.$i --------' >> /u/local/apps/queue.logs/job.log.serial
+  if (`wc -l /u/home/a/alexpste/Output_WD_2020_focus/octupole.joblog.$i  | awk '{print \$1}'` >= 1000) then
+	head -50 /u/home/a/alexpste/Output_WD_2020_focus/octupole.joblog.$i >> /u/local/apps/queue.logs/job.log.serial
+	echo ' '  >> /u/local/apps/queue.logs/job.log.serial
+	tail -10 /u/home/a/alexpste/Output_WD_2020_focus/octupole.joblog.$i >> /u/local/apps/queue.logs/job.log.serial
+  else
+	cat /u/home/a/alexpste/Output_WD_2020_focus/octupole.joblog.$i >> /u/local/apps/queue.logs/job.log.serial
+  endif
+  exit (0)";
+close (MYFILE);
+system "qsub OSPE_$i.cmd";
+system "rm OSPE_$i.cmd";
+
+}
