@@ -1,0 +1,25 @@
+# KOI = 367
+# Telescope = GeminiN-8m
+# Instrument = DSSI
+# Wavelength = 692nm
+# Date = 20140725
+# Pixscale = 0.0109
+# FWHM = 0.02
+#
+# Column descriptions:
+# dist: separation in arcsecs from the KOI
+# Dmag: 5-sigma sensitivity limit at 692nm
+# dist dmag
+0.02   0.000
+0.10   4.430
+0.20   5.486
+0.30   5.716
+0.40   6.070
+0.50   6.470
+0.60   6.689
+0.70   7.016
+0.80   7.152
+0.90   7.261
+1.00   7.425
+1.10   7.500
+1.20   7.515

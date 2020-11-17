@@ -1,0 +1,9 @@
+#!/bin/bash                                                                                                                                        
+
+#for n in 67 74 39 11 26 87 46 96 40 97 # print statement from unfinished_runs.py                                                                   
+#do
+#    scp unfinished_inicons/triple.in$n isabelan@hoffman2.idre.ucla.edu:/u/home/i/isabelan/IniCon/triple.in$n
+#done
+
+tar -czvf unfinished_inicons.tar.gz unfinished_inicons
+scp unfinished_inicons.tar.gz isabelan@hoffman2.idre.ucla.edu:/u/home/i/isabelan/IniCon/
