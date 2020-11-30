@@ -22,7 +22,6 @@ m_subsat = 1.4585e-4 # 48.6 Mearth (Brady et al. 2018)
 
 # ===========================================================
 
-
 def draw_sample_companion():
     """
     Function to draw sma and mass of outer companion 
@@ -30,27 +29,28 @@ def draw_sample_companion():
     :return: a2 in au, m3 in solar mass (tuple)
     """
     # define functions that set upper limits, you want to do this outside of the loop!
-    f_RV = interpolate.interp1d(RV_sma, RV_mass)
     f_AO = interpolate.interp1d(AO_sma, AO_mass)
+    f_Speckle = interpolate.interp1d(Speckle_sma,Speckle_mass)
     f_GAIA = 1
     
     # define minima
-    min_a2 = 10*a_subsat # au
+    min_a2 = 1.40 # au
     min_m3 = 0.1*m_subsat # require mass fraction of 10 for Kozai
     
-    # compute a2 : min=a_subsaturn, max from Winn (2015) 
-    a2 = np.power(10, np.random.uniform(np.log10(min_a2), 4)) # log uniform [0.1,1e5]
+    # compute a2 : 600 days < P < 1200 days from RV data
+    a2 = np.random.uniform(1.40,2.24) # uniform [1.40au,2.24au] 
     
     # compute m3 : min=0.1m2, max defined by constraints
-    if a2 < AO_sma[0]:
-        # RV constraint
-        max_m3 = f_RV(a2)
-    elif a2 > AO_sma[-1]:
-        # GAIA constraint
-        max_m3 = 1
+    if a2 < AO_sma[0] or a2 > AO_sma[-1]:
+    	# maximum set by theory to 2Mjup
+    	max_m3 = 0.0019 # Msun
+    elif a2 < Speckle_sma[0] or a2 > Speckle_sma[-1]:
+    	# AO constraint
+    	#max_m3 = f_AO(a2) from graph
+        max_m3 = 0.0019 # Msun # from theory
     else:
-        # whichever is lowest between RV and AO
-        max_m3 = min(f_RV(a2), f_AO(a2))
+    	# whichever is lowest between Speckle and AO
+    	max_m3 = min(f_Speckle(a2), f_AO(a2))
         
     m3 = np.power(10, np.random.uniform(np.log10(min_m3), np.log10(max_m3)))
     
@@ -58,29 +58,28 @@ def draw_sample_companion():
 
 # ===========================================================
 
-def get_stable_system(a1):
+def get_stable_system(a2,m3,e2):
     """
     Function to generate companion mass/sep/ecc 
     and test if stable. Stability criteria requires epsilon < 0.1
     where epsilon = (a1/a2)*(e2/(1-e2**2.))
-    :param a1: initial separation of inner planet in au (float)
-    :return: a2 in au,m3 in solar mass, e2 (tuple)
+    :param a2,m3,e2: sma, mass, ecc of outer planet (au, Msun, '')
+    :return: a1 in au
     """
     system_found = False
     count = 0
     max_count = 500
     epsilon_max = 0.1
     while system_found == False:
-        
-        # draw mass [Msun], sma [au] of outer planet from allowed parameter space
-        a2, m3 = draw_sample_companion()
-        
-        # draw eccentricity of outer planet
-        e2 = np.random.uniform(0,1)
-        
+
+        # inner planet sma [au]
+        a1_min = 0.1 # minimum set by inner radius of dust in protoplanetary disk
+        a1_max = epsilon_max*a2*((1-e2**2.)/e2) # set by epsilon<0.1 for stability
+        a1 = np.power(10, np.random.uniform(np.log10(a1_min), np.log10(a1_max)))
+
         # compute epsilon for stability criteria
         epsilon = (a1/a2)*(e2/(1-e2**2.))
-        
+
         # apply EKL criteria (close+massive)
         if (m3 < 0.1*m_subsat) and (a2 > 30):
             count += 1
@@ -88,9 +87,9 @@ def get_stable_system(a1):
             if count == max_count:
                 #print('doesn\'t induce EKL')
                 return None
-            
-        # apply stability criterion
-        elif epsilon > 0.1:
+
+        # apply stability criterion (epsilon>0.1 means a1max<a1min)
+        elif epsilon > epsilon_max:
             count += 1
             #print('stability not satisfied ')
             if count == max_count:
@@ -101,7 +100,7 @@ def get_stable_system(a1):
         else:
             system_found = True
             #print('system found ', count)
-            return(a2,m3,e2)
+            return(a1)
         
 # ===========================================================
 
@@ -142,20 +141,19 @@ def initial_conditions():
 
     # age to evolve to [Myr]
     age =  6.31*1.2*1000 # evolve to 1.2*system age (Brady et al. 2018)
-    
-    # inner planet sma [au]
-    a1_min = 0.1 # minimum set by inner radius of dust in protoplanetary disk
-    a1 = np.power(10, np.random.uniform(np.log10(a1_min), 1)) # log uniform [0.8*a_subsat,10]
-    
+
+    # outer planet sma/mass/ecc
+    a2, m3 = draw_sample_companion()
+    e2 = np.random.uniform(0,1)
+
     # inner planet eccentricity
     e1 = 0.01
     
     # outer planet sma/mass/ecc
-    stable_system = get_stable_system(a1)
+    stable_system = get_stable_system(a2,m3,e2)
     if stable_system is not None:
-        a2,m3,e2 = stable_system
-        return(np.array([m1,m2,m3,R1,R2,spin1P,spin2P,beta,beta2,gamma,gamma2,a1,a2,e1,e2,g1,g2,i,age])) 
+        a1 = stable_system
+        return(np.array([m1,m2,m3,R1,R2,spin1P,spin2P,beta,beta2,gamma,gamma2,a1,a2,e1,e2,g1,g2,i,age]))
     else:
         return None
-    
-# ===========================================================
+
