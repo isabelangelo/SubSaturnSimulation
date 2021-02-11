@@ -151,18 +151,28 @@ def create_file(initial_conditions, file_dir, file_end, start_time = 1e-16, rest
 
 # ==========================================================================
 
-def generate_set_of_files(n, file_dir):
+def generate_set_of_files(n, file_dir, start = 0):
     """
     Creates a set of triple.in files by iteratively running create_file()
     :param n: number of triple.in files to generate (will create triple.in1-n)
     :param file_dir: directory to store triple.in files in
     :return: writes a n triple.inX file and saves to file_dir
     """
-    for j in range(1,n+1):
+    # for j in range(start,start+n+1):
+    #     inicons = initial_conditions()
+    #     file_end = str(j)
+    #     print(initial_conditions)
+    #     create_file(inicons, file_dir,file_end)
+
+    n_files = start
+    n_max = start + n
+    while n_files < n_max:
         inicons = initial_conditions()
-        file_end = str(j)
-        print(initial_conditions)
-        create_file(inicons, file_dir,file_end)
+        if inicons is not None:
+            n_files += 1
+            file_end = str(n_files)
+            create_file(inicons, file_dir, file_end)
+
 
 # ==========================================================================
 

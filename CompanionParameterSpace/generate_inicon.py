@@ -37,8 +37,8 @@ def draw_sample_companion():
     min_a2 = 1.40 # au
     min_m3 = 0.1*m_subsat # require mass fraction of 10 for Kozai
     
-    # compute a2 : 600 days < P < 1200 days from RV data
-    a2 = np.random.uniform(1.40,2.24) # uniform [1.40au,2.24au] 
+    # compute a2 : 600 days < P < 2100 days from RV data
+    a2 = np.random.uniform(1.40,3.25) # uniform [1.40au,3.25au] 
     
     # compute m3 : min=0.1m2, max defined by constraints
     if a2 < AO_sma[0] or a2 > AO_sma[-1]:
@@ -95,9 +95,19 @@ def get_stable_system(a2,m3,e2):
             if count == max_count:
                 #print('couldn\'t find stable system')
                 return None
+
+        # assert that a1<a2, reject if not
+        elif a2 < a1:
+            count += 1
+            #print('a2 < a1')
+            if count == max_count:
+                #print('couldn\'t find stable system')
+                return None
             
         # save systems that satisfy criteria
         else:
+            if a2 < a1:
+                print('a2<a1')
             system_found = True
             #print('system found ', count)
             return(a1)
